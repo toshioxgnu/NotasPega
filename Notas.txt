@@ -1,0 +1,19 @@
+Emails de rechazo
+
+Casilla dte -> Errores
+
+Revisar unas 2 a 3 veces en el dia pero altiro en la mañana
+primer adjunto -> motivo de rechazo
+
+Cuando la empresa anula folios en el SII, hay que ocuparlos en el sistema
+
+Chicos, para las solicitudes de Jéssica  de Alphalab, indicando que una NC está asociada a boleta, se puede hacer el siguiente insert:
+
+insert into tbreflcvh (idlcvh, linea, tipo_doc, folio_ref, fecha_ref, fecha_insert, idempresa, serie, numfact, tipo_doc_origen)
+values ('7264862','1','39','0','22/04/2020', getdate(),'2428','0165', '0','0155')
+
+Sólo se cambia el idlcvh y la fecha de referencia, se indica la fecha de emisión de la NC.
+
+ADMIN FEC
+
+DOCUMENTO NO APARECE EN EL SII
