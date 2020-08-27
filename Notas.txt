@@ -1,11 +1,15 @@
 Emails de rechazo
 
+Productos Diaz: B29
+
 Casilla dte -> Errores
 
 Revisar unas 2 a 3 veces en el dia pero altiro en la mañana
 primer adjunto -> motivo de rechazo
 
 Cuando la empresa anula folios en el SII, hay que ocuparlos en el sistema
+
+bloquear folios = ocupar
 
 Chicos, para las solicitudes de Jéssica  de Alphalab, indicando que una NC está asociada a boleta, se puede hacer el siguiente insert:
 
@@ -16,4 +20,124 @@ Sólo se cambia el idlcvh y la fecha de referencia, se indica la fecha de emisi�
 
 ADMIN FEC
 
+tipo dte = sercue
+
 DOCUMENTO NO APARECE EN EL SII
+
+El estado 97 se debe a dos cosas, el documento está rechazado o el SII no respondió el estado correctamente
+
+consultar en casilla dte con el track del documento.
+Verificar si es por folio vencido que esos folios no esten disponibles para emitir si es asi bloquear el rango completo.
+Informar la situacion al ejecutivo.
+
+
+lberar factura => Liberar folio
+
+
+Todos esos giros van registrados en la TBGIROS
+
+
+Con su acteco y su descripción
+
+Tal cual
+
+Por qué? Porque eso es lo válido para el SII
+
+En FEC, el acteco que se guarda ahí es el primero no más
+
+Porque lo que se llena en el XML es lo que se selecciona de la tbgiro (o tbgiros, está en conta)
+
+En XML info se pone lo que quiere el cliente para que se vea en la factura, es una descripción general de todo lo que hace esa empresa
+
+Nosotros nos guiamos por lo que está en el SII, si no se ven reflejados los cambios de los giros que envía el cliente es porque no se ha hecho
+
+Y la descripción de esos giros con su respectivo acteco no es editable
+
+Ya ha pasado casos que el cliente quiere cambiar todo antes de cambiar en el SII y eso no puede ser
+
+El acteco se valida en el SII y rechaza facturas por un acteco no válido
+
+
+CERTIFICACION EMPRESAS
+
+Ver que la empresa no este certificada en ese tipo de documento
+
+postular a la empresa set basico -> luego otros documentos (Si ya esta certificada obviar este paso)
+
+IMPLEMENTACION
+
+Declarar cumplimiento de requisitos
+
+Agregar a SR como usuario | RUT SR -> 15786534-K
+
+Cambiar correos
+
+admn_760384690_929@dte.contaline.cl <- Mail Contacto adm
+contact_760384690_929@dte.contaline.cl <- Mal contacto SII
+recep_760384690_929@dte.contaline.cl <- Mail contacto Empresas
+
+
+IR8
+admn_763254011_2544@dte.contaline.cl
+contact_763254011_2544@dte.contaline.cl
+recep_763254011_2544@dte.contaline.cl
+
+IV0
+admn_761120964_2576@dte.contaline.cl
+contact_761120964_2576@dte.contaline.cl
+recep_761120964_2576@dte.contaline.cl
+
+Agregar a FEC
+User: srojas
+clave: sr1243
+
+menú : administrador -> crear empresa en productivo
+
+comprobar select * from empresa where rut='<Rut empresa>'
+
+INSERTS
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','Autorizacion','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','EnvioDTE','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','IDPROCESO','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','LibroCompraVenta','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','RespuestaEnvio','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','ResultadoDTE','1');
+INSERT INTO AUTOINCREMENT_ID VALUES ('76038469-0','ConsumoFolios','1');
+
+PARAMETROS -> menú : administrador -> datos para productivo
+
+comprobar: select * from parametro where RUTEMISOR='<RUT EMPRESA>'
+
+Cargar Certf SR -> menú : administrador -> cargar PFx Productivo
+
+primero solicite folios
+
+factura afecta y exenta 20
+
+NC = 4
+
+ND 2
+
+guía 10
+
+boleta 100
+
+Crear carpeta FOLIOS en carpeta empresa
+
+tabla empresa FEC cambiar contraseña -> cntln.76210/
+
+update empresa set PASSWORD = 'cntln.76210/' where RUT = '<RUT>'
+
+Admin de FEC
+
+OPCIONES EMPRESA FACTURACION 3
+
+empresa -> idempresa -> passs diferentes => Lo demas es igual
+
+HABILITACION DE SISTEMAS
+
+idempresa -> trae propiedades -> Campo7 = 3 -> Campo9 = 1
+
+Creacion empresa facturacion -> idempresa -> factur<idalfanumerico> -> pass (C08nta09) -> numero copiar en user -> rut empresa con guion -> Crear usuario fact.
+
+Subir folios por la pagina -> Subir rdls (Si la empresa adjunta logo colocarlo en los rdls)
