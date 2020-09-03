@@ -1,6 +1,16 @@
 Emails de rechazo
 
+CAF VENCIDO:
+
+Se bloquean los folios vencidos en el sistema, desde el folio rechazado hasta el final del rango.
+Se le avisa al cliente (Buscar correo en casilla soporte)
+Verificar que el proximo folio en el sistema sea el que corresponde
+
+Al final del correo, indica que te avisen cuando carguen nuevos folios y emitan los documentos nuevos, para así eliminar del sistema los que fueron rechazados
+
 Productos Diaz: B29
+
+subir folios por facturacion php y por admin mdi
 
 Casilla dte -> Errores
 
@@ -31,11 +41,12 @@ Verificar si es por folio vencido que esos folios no esten disponibles para emit
 Informar la situacion al ejecutivo.
 
 
-lberar factura => Liberar folio
-
+liberar factura => Liberar folio
 
 Todos esos giros van registrados en la TBGIROS
 
+ORDEN ELIMINACION DOCUMENTO:
+TBLCH - > tbdoctributario -> documentotributario
 
 Con su acteco y su descripción
 
